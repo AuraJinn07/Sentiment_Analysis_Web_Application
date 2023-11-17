@@ -5,6 +5,7 @@ Step 1: Download and Extract the .zip file.
 Step 2: Open the folder and then open with your code editor (VS Code etc.).
 
 Step 3: Install all the dependencies from the requirements.txt file by using the command- 
+
         pip install -r requirements.txt
         
 Step 4: Open the values.py file in the SentimentApp folder.
@@ -14,7 +15,12 @@ Step 5: Put the sender email address in the 'useraddr' variable.
         
 Step 6: Put the password of the mail account in the 'pass' variable.
 
+Step 7: Initialize the django server by running the command in the terminal-
+
+        python manage.py migrate
+
 Step 7: Run the django server by using the command in the terminal of the code editor- 
+
         python manage.py runserver
         
 Step 8: Click on the link that is shown in the terminal (http://127.0.0.1:8000/)
