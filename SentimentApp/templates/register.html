@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <title>Sentimental Analysis Web-App Registration</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+</head>
+<body>
+<div class="container">
+    <div class="main-app">
+        <h2>Brand Score Checker App<img src="{% static 'images/brandlogo.png' %}" alt=""></h2>
+        <h3>Registration Page</h3><br>
+        <h4>Register with your Email-ID to get regular updates!</h4>
+        <form action = "registerEmail">
+            <div class= "registerRow">
+                <input type="text" id="input-box" name="Name" placeholder="Type the name here"><br>
+                <input type="text" id="input-box" name="Email" placeholder="Type the Email-ID here"><br>
+            </div>
+            <div class = updaterow>
+                <button type="submit">Submit</button>
+        </form>
+                <form action = "mainpage">
+                    <button type="submit">Back</button>
+                </form>
+            </div>
+        {% if error is not None %}
+            <div class="result-app">
+                <h2>{{ error }}</h2>
+            </div>
+        {% endif %}
+        {% if message is not None %}
+            <div class="result-app">
+                <h2>{{ message }}</h2>
+            </div>
+        {% endif %}
+    </div>

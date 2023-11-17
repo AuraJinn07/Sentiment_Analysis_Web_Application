@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <title>Sentimental Analysis Web-App</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+</head>
+<body>
+<div class="container">
+    <div class="main-app">
+        <h2>Brand Score Checker App<img src="{% static 'images/brandlogo.png' %}" alt=""></h2>
+        <form action = "initScoreCalc">
+            <div class="row">
+                <input type="text" id="input-box" name="input-box" placeholder="Type the name here">
+                <button type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+
+    {% if error is not None %}
+    <div class="result-app">
+        <h2>{{ error }}</h2>
+    </div>
+    {% endif %}
+
+    {% if message is not None %}
+    <div class="result-app">
+        <h3>{{ message }}</h3>
+        <h2 id = "score">{{ score }}</h2>
+        <div class = "updaterow">
+            <form action = "register">
+                <button type="submit">Register</button>
+            </form>
+            <form action = "updateScore">
+                <button type="submit">Update Score</button>
+            </form>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if result is not None %}
+    <div class="result-app">
+        <h3>{{ result }}</h3>
+
+        {% if flag is 0 %}
+        <h1 id = "red">{{ score }}</h1>
+        {% elif flag is 1 %}
+        <h1 id = "green">{{ score }}</h1>
+        {% elif flag is 2 %}
+        <h1 id = "normal">{{ score }}</h1>
+        {% endif %}
+
+        <h3>Reasons:</h3>
+        <h4>{{ reason1 }}</h4>
+        <h4>{{ reason2 }}</h4>
+
+        <form action = "updateScore">
+            <div class = "updaterow">
+                <button type="submit">Update Score</button>
+            </div>
+        </form>
+    </div>
+    {% endif %}
+</div> 
+</body>
+</html>
