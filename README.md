@@ -23,7 +23,7 @@ Step 7: Run the django server by using the command in the terminal of the code e
 
         python manage.py runserver
         
-Step 8: Click on the link that is shown in the terminal (http://127.0.0.1:8000/)
+Step 8: Click on the link that is shown in the terminal (like- http://127.0.0.1:8000/)
 
 Step 9: Use the app as desired.
         (NOTE: Only the following brand names are available- Amazon, Google, Microsoft, Facebook, Nvidia, Xbox, PlayStation, Verizon, HomeDepot. Searching for any other brand name will result in an error message. Names of the brands are CASE-SENSITIVE)
